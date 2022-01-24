@@ -1,17 +1,8 @@
-import { useRouter } from "next/router";
 import { useState } from "react";
 import CardList from "../../components/cards";
 
 export default function DetailsPage({ query }) {
   const [count, setCount] = useState(0);
-
-  const router = useRouter();
-
-  const { query: q, params } = router;
-
-  console.log(router);
-  console.log(q);
-  console.log(params);
 
   return (
     <>
@@ -33,8 +24,9 @@ export default function DetailsPage({ query }) {
   );
 }
 
-export async function getServerSideProps({ query }) {
-  console.log(query);
+export async function getServerSideProps({ query, params }) {
+  console.log("query", query);
+  console.log("params", params);
 
   const result = await new Promise((resolve, reject) => {
     setTimeout(() => {
