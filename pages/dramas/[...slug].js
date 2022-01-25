@@ -1,13 +1,22 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function DramasPage({ queryString }) {
   const router = useRouter();
   const { query, pathname, asPath } = router;
-  console.log("query, ", query);
-  console.log("pathname, ", pathname);
-  console.log("asPath ", asPath);
-  console.log("queryString, ", getQueryString(asPath));
-  console.log(router);
+
+  useEffect(() => {
+    console.log("----------------");
+    console.log("query, ", query);
+    console.log("pathname, ", pathname);
+    console.log("asPath ", asPath);
+    console.log("queryString, ", getQueryString(asPath));
+    console.log(router);
+    console.log(
+      "NEXT_PUBLIC_ANALYTICS_ID = ",
+      process.env.NEXT_PUBLIC_ANALYTICS_ID
+    );
+  }, []);
 
   function handlePush() {
     router.push("/dramas/chinese?actress=yukee", "", {
@@ -15,12 +24,25 @@ export default function DramasPage({ queryString }) {
     });
   }
 
+  function handleReplace() {
+    router.replace("/dramas/thai?actress=unknown");
+  }
+
+  function handleBack() {
+    router.back();
+  }
   return (
     <div>
       <header className="shadow p-3">header</header>
       <div className="actions">
         <button className="shadow px-3 py-2" onClick={handlePush}>
           push
+        </button>
+        <button className="shadow px-3 py-2" onClick={handleReplace}>
+          replace
+        </button>
+        <button className="shadow px-3 py-2" onClick={handleBack}>
+          go back
         </button>
       </div>
       <style>{`

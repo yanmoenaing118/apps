@@ -1,17 +1,20 @@
-import { useState } from "react";
+import Link from "next/link";
 import CardList from "../../components/cards";
+import useCounter from "../../lib/useCounter";
 
 export default function DetailsPage({ query }) {
-  const [count, setCount] = useState(0);
+  const { count, inc } = useCounter();
 
   return (
     <>
       <div className="max-w-xl mx-auto">
         <div className="flex justify-between">
           <h1>count: {count}</h1>
-          <h1 className="font-bold">{query?.slug}</h1>
+          <h1 className="font-bold">
+            <Link href={`/${query.slug}/counter`}>{query?.slug}</Link>
+          </h1>
         </div>
-        <button onClick={() => setCount(count + 1)}>click</button>
+        <button onClick={() => inc()}>click</button>
       </div>
       <main className="max-w-xl mx-auto">
         <CardList
