@@ -47,15 +47,22 @@ export default function Layout({ children }) {
                 <a>Learning Recoil</a>
               </Link>
             </li>
+
+            <li>
+              <Link href="/about">
+                <a>About us</a>
+              </Link>
+            </li>
           </ul>
         </nav>
 
         <style jsx>{`
           li {
-            margin-right: 2rem;
+            margin-right: 1rem;
             color: green;
             border: 1px solid #eee;
             padding: 0.3em;
+            font-size: 0.9rem;
           }
         `}</style>
       </footer>
