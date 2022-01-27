@@ -17,7 +17,7 @@ export default function Home({ list }) {
 export async function getServerSideProps() {
   const list = await new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(new Array(6).fill(9));
+      resolve(new Array(2).fill(9));
     }, 5000);
   });
 
