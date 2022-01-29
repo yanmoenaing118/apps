@@ -19,6 +19,7 @@ function CardItem({ item }) {
           width={600}
           height={240}
           objectFit="contain"
+          alt="Default Alt"
         />
         <Link href={`/${item}`}>
           <a>View Details</a>
