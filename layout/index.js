@@ -34,24 +34,19 @@ export default function Layout({ children }) {
               </Link>
             </li>
             <li>
-              <Link href="/swr-todos">
-                <a>SWR Todo App</a>
+              <Link href="/ssg">
+                <a>SSG (Static Generation)</a>
               </Link>
             </li>
             <li>
-              <Link href="/recoil-todos">
-                <a>Recoil Todo App</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/learn-recoi">
-                <a>Learning Recoil</a>
+              <Link href="/ssg_with_external_data">
+                <a>SSG with Data</a>
               </Link>
             </li>
 
             <li>
-              <Link href="/about">
-                <a>About us</a>
+              <Link href="/products">
+                <a>Products</a>
               </Link>
             </li>
           </ul>
