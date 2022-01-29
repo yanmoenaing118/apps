@@ -1,29 +1,7 @@
-import CardList from "../components/cards";
-import Filter from "../components/filters";
-import Header from "../components/header";
-
-export default function Home({ list }) {
+export default function Home() {
   return (
-    <>
-      <Header />
-      <Filter />
-      <main className="max-w-xl mx-auto">
-        <CardList list={list} />
-      </main>
-    </>
+    <section>
+      <h1>Home page</h1>
+    </section>
   );
-}
-
-export async function getServerSideProps() {
-  const list = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(new Array(2).fill(9));
-    }, 5000);
-  });
-
-  return {
-    props: {
-      list,
-    },
-  };
 }

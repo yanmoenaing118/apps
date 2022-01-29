@@ -21,9 +21,10 @@ export default function Layout({ children }) {
         <title>Image Gallery</title>
       </Head>
       <PageProgressbar />
-      <header></header>
+
       {/* <Navs list={navs} loading={loading} /> */}
-      {children}
+
+      <main className="max-w-xl mx-auto my-4">{children}</main>
       <footer className="p-3 max-w-xl mx-auto shadow mt-6">
         <nav>
           <ul className="flex">
